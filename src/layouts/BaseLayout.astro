@@ -15,7 +15,9 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    <slot />
+    <div class="md:px-10 lg:px-50">
+      <Header />
+      <slot />
+    </div>
   </body>
 </html>

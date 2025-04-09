@@ -14,12 +14,7 @@ import { portfolio } from "./data";
 
 export const DesktopNavigation = (props: NavigationMenuProps) => (
   <NavigationMenu {...props}>
-    <NavigationMenuList className="gap-8 space-x-0">
-      <NavigationMenuItem>
-        <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-          <a href="/">Home</a>
-        </NavigationMenuLink>
-      </NavigationMenuItem>
+    <NavigationMenuList className="gap-4 space-x-0">
       <NavigationMenuItem>
         <NavigationMenuTrigger className={navigationMenuTriggerStyle()}>
           Portfolio
