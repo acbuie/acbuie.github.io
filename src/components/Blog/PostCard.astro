@@ -1,6 +1,6 @@
 ---
 import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
   CardFooter,
@@ -59,7 +59,13 @@ const updated = updateDate !== undefined ? updateDate : false;
     {description}
   </CardContent>
   <CardFooter className="flex-row justify-between">
-    <Button>Read </Button>
+    <!-- NOTE: Could not get `asChild` to actually render the button for some reason, but this works -->
+    <a
+      href={`/posts/${post.id}`}
+      class={buttonVariants({ variant: "default" })}
+    >
+      Read
+    </a>
 
     <div class="flex gap-x-2">
       {tags.map((t) => <Badge variant="secondary">{t}</Badge>)}
