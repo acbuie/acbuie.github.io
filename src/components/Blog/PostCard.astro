@@ -1,4 +1,15 @@
 ---
+import { Badge } from "../ui/badge";
+import { Button } from "../ui/button";
+import {
+  Card,
+  CardFooter,
+  CardTitle,
+  CardDescription,
+  CardHeader,
+  CardContent,
+} from "../ui/card";
+
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
@@ -6,19 +17,52 @@ type Props = {
 };
 
 const { post } = Astro.props;
-const { title, description, pubDate, tags } = post.data;
+const { title, description, pubDate, updateDate, tags } = post.data;
+const updated = updateDate !== undefined ? updateDate : false;
 ---
 
-<div>
-  {title}
-  <div>
-    <time datetime={pubDate.toISOString()}>
-      {
-        pubDate.toLocaleDateString(undefined, {
-          dateStyle: "medium",
-          timeZone: "UTC",
-        })
-      }
-    </time>
-  </div>
-</div>
+<Card key={title} className="flex flex-col justify-between ">
+  <CardHeader>
+    <div>
+      <CardTitle className="h-[2.5rem] leading-5 line-clamp-2">
+        {title}
+      </CardTitle>
+      <CardDescription>
+        <div class="flex justify-between">
+          <time datetime={pubDate.toISOString()}>
+            {
+              pubDate.toLocaleDateString(undefined, {
+                dateStyle: "medium",
+                timeZone: "UTC",
+              })
+            }
+          </time>
+          <!--Conditional rendering for `updateDate`-->
+          {
+            updated && (
+              <div>
+                Updated
+                <time datetime={updated.toISOString()}>
+                  {updated.toLocaleDateString(undefined, {
+                    dateStyle: "medium",
+                    timeZone: "UTC",
+                  })}
+                </time>
+              </div>
+            )
+          }
+        </div>
+      </CardDescription>
+    </div>
+  </CardHeader>
+  <CardContent className="md:line-clamp-3 lg:line-clamp-3 text-sm">
+    {description}
+  </CardContent>
+  <CardFooter className="flex-row justify-between">
+    <Button>Read </Button>
+
+    <div class="flex gap-x-2">
+      {tags.map((t) => <Badge variant="secondary">{t}</Badge>)}
+    </div>
+  </CardFooter>
+</Card>
