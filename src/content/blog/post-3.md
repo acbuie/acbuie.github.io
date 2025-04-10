@@ -1,8 +1,14 @@
 ---
-title: Test post 1
-description: Here is a description of test post 1. It has two tags.
-pubDate: 04/05/2025
-tags: [test, tutorial]
+title:
+  Test post numero tres! This title is quite a bit longer, just to see how it
+  behaves.
+description:
+  Here is a description of test post 3. It is also much longer, with multiple
+  sentences. It might even take up too many lines. Although, I think I need to
+  hit three lines before this gets cut off.
+pubDate: 04/10/2025
+updateDate: 04/11/2025
+tags: [test, testing, educational]
 ---
 
 caelum umbra pax sanctum vox orbus stella adipiscing stella deus ventus rex vox

@@ -1,7 +1,10 @@
 ---
 title: Test post 2
-description: Here is a description of test post 2
+description:
+  Here is a description of test post 2. It is much longer, with multiple
+  sentences. It might even take up too many lines.
 pubDate: 04/10/2025
+updateDate: 04/11/2025
 tags: [test]
 ---
 
