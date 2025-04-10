@@ -14,4 +14,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+
+  redirects: {
+    "/posts": "/blog",
+  },
 });
