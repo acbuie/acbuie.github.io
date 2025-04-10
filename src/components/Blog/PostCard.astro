@@ -21,7 +21,7 @@ const { title, description, pubDate, updateDate, tags } = post.data;
 const updated = updateDate !== undefined ? updateDate : false;
 ---
 
-<Card key={title} className="flex flex-col justify-between ">
+<Card key={post.id} className="flex flex-col justify-between ">
   <CardHeader>
     <div>
       <CardTitle className="h-[2.5rem] leading-5 line-clamp-2">
