@@ -1,0 +1,10 @@
+---
+const { bannerTitle } = Astro.props;
+---
+
+<div
+  class="px-5 md:px-10 xl:px-50 sticky top-16 flex items-center pb-5 bg-background"
+>
+  <h1 class="flex-none">{bannerTitle}</h1>
+  <div class="flex grow ml-5 bg-accent-foreground h-0.5"></div>
+</div>
