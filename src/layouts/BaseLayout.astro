@@ -1,7 +1,6 @@
 ---
 import "../styles/global.css";
 import Header from "@/components/Header/Header.astro";
-import BannerTitle from "@/components/BannerTitle.astro";
 
 const { pageTitle, bannerTitle } = Astro.props;
 ---
@@ -16,8 +15,7 @@ const { pageTitle, bannerTitle } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
-    <Header />
-    {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
+    <Header bannerTitle={bannerTitle} />
     <div class="px-5 md:px-10 xl:px-50">
       <slot />
     </div>
