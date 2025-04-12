@@ -9,9 +9,11 @@
   --light0: oklch(0.95 0.0075 17.28);
   --light1: oklch(0.91 0.0121 17.38);
   --light2: oklch(0.87 0.019 17.53);
+  --light3: oklch(0.82 0.0239 17.65);
   --dark0: oklch(0.28 0 0);
   --dark1: oklch(0.34 0.0066 48.52);
   --dark2: oklch(0.41 0.0115 51.87);
+  --dark3: oklch(0.48 0.0181 61.04);
 
   /* --blue: oklch(); */
   /* --cyan: oklch(); */
@@ -30,7 +32,7 @@
   
   --primary: var(--dark0); /* Inverse */
   --primary-foreground: var(--light0);
-  --secondary: var(--light2); /* Inverse...? Looks OK for now, could be darker */
+  --secondary: var(--light3);
   --secondary-foreground: var(--dark2);
   
   --muted: var(--light1);
@@ -70,7 +72,7 @@
   
   --primary: var(--light0); /* Inverse */
   --primary-foreground: var(--dark0);
-  --secondary: var(--dark2);
+  --secondary: var(--dark3);
   --secondary-foreground: var(--light2);
   
   --muted: var(--dark1);
