@@ -2,6 +2,7 @@
 
 @plugin "tailwindcss-animate";
 @plugin "@tailwindcss/typography";
+@config "./tailwind.config.cjs";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -15,31 +16,32 @@
   --dark2: oklch(0.41 0.0115 51.87);
   --dark3: oklch(0.48 0.0181 61.04);
 
-  /* --blue: oklch(); */
-  /* --cyan: oklch(); */
-  /* --green: oklch(); */
-  /* --yellow: oklch(); */
-  /* --red: oklch(); */
-  /* --orange: oklch(); */
-  
+  --red: oklch(0.55 0.203 28.66);
+  --green: oklch(0.66 0.1354 109.12);
+  --yellow: oklch(0.73 0.1429 77.71);
+  --blue: oklch(0.58 0.0658 199.49);
+  --purple: oklch(0.6 0.1105 352.22);
+  --cyan: oklch(0.65 0.0939 145.27);
+  --orange: oklch(0.62 0.1707 45.81);
+
   --background: var(--light0);
   --foreground: var(--dark0);
-  
+
   --card: var(--light1);
   --card-foreground: var(--dark0);
   --popover: var(--light1);
   --popover-foreground: var(--dark0);
-  
+
   --primary: var(--dark0); /* Inverse */
   --primary-foreground: var(--light0);
   --secondary: var(--light3);
   --secondary-foreground: var(--dark2);
-  
+
   --muted: var(--light1);
   --muted-foreground: var(--dark1);
   --accent: var(--light2);
   --accent-foreground: var(--dark2);
-  
+
   /* --destructive: oklch(0.577 0.245 27.325); */
   /* --destructive-foreground: oklch(0.577 0.245 27.325); */
   --border: oklch(0.85 0.0192 100.86);
@@ -64,22 +66,22 @@
 .dark {
   --background: var(--dark0);
   --foreground: var(--light0);
-  
+
   --card: var(--dark1);
   --card-foreground: var(--light0);
   --popover: var(--dark1);
   --popover-foreground: var(--light0);
-  
+
   --primary: var(--light0); /* Inverse */
   --primary-foreground: var(--dark0);
   --secondary: var(--dark3);
   --secondary-foreground: var(--light2);
-  
+
   --muted: var(--dark1);
   --muted-foreground: var(--light1);
   --accent: var(--dark2);
   --accent-foreground: var(--light2);
-  
+
   /* --destructive: oklch(0.396 0.141 25.723); */
   /* --destructive-foreground: oklch(0.637 0.237 25.331); */
   --border: oklch(0.268 0.007 34.298);
