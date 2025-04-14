@@ -1,10 +1,59 @@
 ---
+import SectionTitle from "@/components/CV/SectionTitle.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<BaseLayout pageTitle="About | acbuie">
-  <div class="w-full">
-    <h1>Curriculum Vitae</h1>
-    <p>Here is more text.</p>
+<BaseLayout pageTitle="CV | acbuie" , bannerTitle="Curriculum Vitae">
+  <div class="pb-2.5">
+    <SectionTitle title="About" />
+    <p class="indent-4">
+      I am a PhD student in the Earth and Planetary Science department at the
+      University of New Mexico. I have a background (see below) in geology,
+      environmental science (ecology), and GIS. I do small-scale (big picture)
+      mapping of planetary surfaces but mostly of Mars and Earth. GIS and
+      software tools are somewhat lacking in this field, so I am interested in
+      bridging the gap between software engineers, scientists, and GIS folk.
+    </p>
+    <p class="indent-4">
+      Non-professionally, I also enjoy taking photos. I disagree somewhat with
+      the philosophy of social media photography so I share my work here. Once
+      upon a time I drew and made art. Nowadays, that part of my brain has
+      instead been put to work when I make maps or figures. I am by no means a
+      designer and am always looking to improve!
+    </p>
+  </div>
+  <div class="pb-2.5">
+    <SectionTitle title="Research" />
+  </div>
+  <div class="pb-2.5">
+    <SectionTitle title="Education" />
+    <ul>
+      <li>Masters - UNM 2025</li>
+      <li>B.S. - UNC 2019</li>
+    </ul>
+  </div>
+  <div class="pb-2.5">
+    <SectionTitle title="Experience" />
+    <p>
+      Projects (both finished and work in progress) can be found under <a
+        href="/portfolio/projects">projects</a
+      >.
+    </p>
+    <ul>
+      <li>Graduate teaching assistant - 2022 - present</li>
+      <li>GIS Technician - 2019 - 2022</li>
+      <li>Student Library Assistant - 2015 - 2019</li>
+    </ul>
+  </div>
+  <div class="pb-2.5">
+    <SectionTitle title="Skills" />
+    <ul>
+      <li>GIS: ArcPro, QGIS, eCognition, GDAL</li>
+      <li>
+        Data Analysis: Python[polars, pandas, numpy, sci-kit], R[tidyverse],
+        Julia, SQL
+      </li>
+      <li>Software Development: Git, Github, CI/CD</li>
+    </ul>
   </div>
 </BaseLayout>
