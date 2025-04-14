@@ -10,8 +10,16 @@ export default defineConfig({
   site: "https://acbuie.github.io",
 
   integrations: [react()],
-
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  redirects: {
+    "/posts": "/blog",
+  },
+
+  // TODO: Swap to Shiki or Prism eventually
+  markdown: {
+    syntaxHighlight: false,
   },
 });

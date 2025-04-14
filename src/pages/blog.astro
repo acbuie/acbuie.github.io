@@ -1,7 +1,20 @@
 ---
+import { getCollection } from "astro:content";
+
 import BaseLayout from "@/layouts/BaseLayout.astro";
+
+import PostCard from "@/components/Blog/PostCard.astro";
+
+const posts = await getCollection("blogPosts");
 ---
 
-<BaseLayout pageTitle="Blog | acbuie">
-  <h1>Blog</h1>
+<BaseLayout pageTitle="Blog | acbuie" bannerTitle="Musings">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-col-3 xl:gap-8">
+    {
+      // Sorted by date, newest first
+      posts
+        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+        .map((p) => <PostCard post={p} />)
+    }
+  </div>
 </BaseLayout>
