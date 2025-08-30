@@ -1,9 +1,9 @@
 ---
 import "../../styles/global.css";
 
-import { DesktopNavigation } from "./Nav/DesktopNav";
-import { MobileNavigation } from "./Nav/MobileNav.tsx";
-import { ModeToggle } from "./ModeToggle.tsx";
+import DesktopNavigation from "./Nav/DesktopNav.astro";
+// import { MobileNavigation } from "./Nav/MobileNav.tsx";
+// import { ModeToggle } from "./ModeToggle.tsx";
 import BannerTitle from "./BannerTitle.astro";
 
 const { bannerTitle } = Astro.props;
@@ -39,12 +39,12 @@ const { bannerTitle } = Astro.props;
     <div class="h-16 flex items-center justify-between">
       <a href="/">aidan buie</a>
       <div class="hidden md:flex md:gap-3">
-        <DesktopNavigation client:load />
-        <ModeToggle client:load />
+        <DesktopNavigation />
+        <!-- <ModeToggle client:load /> -->
       </div>
-      <div class="flex md:hidden">
-        <MobileNavigation client:load />
-      </div>
+      <!-- <div class="flex md:hidden"> -->
+      <!--   <MobileNavigation client:load /> -->
+      <!-- </div> -->
     </div>
     {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
   </div>
