@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
-import react from "@astrojs/react";
+// import react from "@astrojs/react";
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -9,7 +9,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   site: "https://acbuie.github.io",
 
-  integrations: [react()],
+  // integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
   },
