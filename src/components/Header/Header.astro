@@ -3,44 +3,19 @@ import "../../styles/global.css";
 
 import DesktopNavigation from "./Nav/DesktopNav.astro";
 // import { MobileNavigation } from "./Nav/MobileNav.tsx";
-// import { ModeToggle } from "./ModeToggle.tsx";
+import Toggle from "./Toggle.astro";
 import BannerTitle from "./BannerTitle.astro";
 
 const { bannerTitle } = Astro.props;
 ---
 
-<!-- NOTE: from shadcn/ui docs -->
-<script is:inline>
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
-    }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
-
-  if (typeof localStorage !== "undefined") {
-    const observer = new MutationObserver(() => {
-      const isDark = document.documentElement.classList.contains("dark");
-      localStorage.setItem("theme", isDark ? "dark" : "light");
-    });
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-  }
-</script>
-
-<nav class="bg-background w-full sticky top-0 flex flex-col">
+<nav class="bg-bg w-full sticky top-0 flex flex-col">
   <div class="px-5 md:px-5 xl:px-50">
     <div class="h-16 flex items-center justify-between">
       <a href="/">aidan buie</a>
       <div class="hidden md:flex md:gap-3">
         <DesktopNavigation />
-        <!-- <ModeToggle client:load /> -->
+        <Toggle />
       </div>
       <!-- <div class="flex md:hidden"> -->
       <!--   <MobileNavigation client:load /> -->

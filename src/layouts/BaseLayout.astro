@@ -12,9 +12,21 @@ const { pageTitle, bannerTitle } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline>
+      // Ensures dark mode is applied before styles load
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="text-primary bg-bg">
     <Header bannerTitle={bannerTitle} />
     <div class="px-5 md:px-10 xl:px-50">
       <slot />
