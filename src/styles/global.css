@@ -149,8 +149,8 @@
     @apply bg-background text-foreground;
   }
 }
-/**/
-/* /* TODO: Custom default font */ */
-/* body { */
-/*   font-family: Open Sans; */
-/* } */
+
+/* TODO: Custom default font */
+body {
+  font-family: Alice;
+}
