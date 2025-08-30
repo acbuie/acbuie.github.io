@@ -2,19 +2,53 @@
 import { getCollection } from "astro:content";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
 
-import PostCard from "@/components/Blog/PostCard.astro";
+const rawPosts = await getCollection("blogPosts");
 
-const posts = await getCollection("blogPosts");
+// Group posts by year
+const posts = rawPosts.reduce(
+  (groups: { [key: string]: CollectionEntry<"blogPosts">[] }, post) => {
+    const year = post.data.pubDate.getFullYear();
+    if (!groups[year]) {
+      groups[year] = [];
+    }
+    groups[year].push(post);
+    return groups;
+  },
+  {},
+);
+
+// Convert to array of objs, sorting by date
+const postsArray = Object.keys(posts)
+  .map((year) => {
+    return {
+      year,
+      posts: posts[year].sort(
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+      ),
+    };
+  })
+  .sort((a, b) => parseInt(b.year) - parseInt(a.year));
 ---
 
 <BaseLayout pageTitle="Blog | acbuie" bannerTitle="Musings">
-  <div class="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-col-3 xl:gap-8">
+  <ul>
     {
-      // Sorted by date, newest first
-      posts
-        .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
-        .map((p) => <PostCard post={p} />)
+      postsArray.map((d) => (
+        <>
+          <h2 class="text-4xl">{d.year}</h2>
+          <ul class="text-xl">
+            {d.posts.map((p) => (
+              <li class="flex justify-between">
+                <span>{p.data.title}</span>
+                <span>{p.data.pubDate.toDateString()}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ))
     }
-  </div>
+  </ul>
+  <!-- {test} -->
 </BaseLayout>
