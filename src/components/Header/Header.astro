@@ -9,18 +9,23 @@ import BannerTitle from "./BannerTitle.astro";
 const { bannerTitle } = Astro.props;
 ---
 
-<nav class="bg-bg w-full sticky top-0 flex flex-col">
-  <div class="px-5 md:px-5 xl:px-50">
-    <div class="h-16 flex items-center justify-between">
-      <a href="/">aidan buie</a>
-      <div class="hidden md:flex md:gap-3">
+<span class="bg-bg w-full sticky top-0 flex flex-col text-2xl font-bold">
+  <span class="px-5 md:px-10 xl:px-50">
+    <span class="h-22 flex items-center justify-between">
+      <div class="relative flex justify-center p-1.5">
+        <span
+          class="absolute -inset-1 block -skew-y-3 bg-gruv-aqua"
+          aria-hidden="true"></span>
+        <a href="/" class="relative text-bg">aidan buie</a>
+      </div>
+      <span class="hidden md:flex md:gap-3">
         <DesktopNavigation />
         <Toggle />
-      </div>
+      </span>
       <!-- <div class="flex md:hidden"> -->
       <!--   <MobileNavigation client:load /> -->
       <!-- </div> -->
-    </div>
+    </span>
     {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
-  </div>
-</nav>
+  </span>
+</span>
