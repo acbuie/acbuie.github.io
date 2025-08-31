@@ -41,7 +41,9 @@ const postsArray = Object.keys(posts)
           <ul class="text-xl grid grid-cols-[auto_8rem] gap-y-3">
             {d.posts.map((p) => (
               <>
-                <li class="">{p.data.title}</li>
+                <li>
+                  <a href={`/posts/${p.id}`}>{p.data.title}</a>
+                </li>
                 <span class="text-right self-end">
                   {p.data.pubDate.toLocaleDateString("default", {
                     month: "short",
