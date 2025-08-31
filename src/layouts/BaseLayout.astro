@@ -26,7 +26,7 @@ const { pageTitle, bannerTitle } = Astro.props;
     </script>
     <title>{pageTitle}</title>
   </head>
-  <body class="text-primary bg-bg">
+  <body class="text-primary bg-bg subpixel-antialiased">
     <Header bannerTitle={bannerTitle} />
     <div class="px-5 md:px-10 xl:px-50">
       <slot />
