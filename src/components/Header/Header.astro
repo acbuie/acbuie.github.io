@@ -2,8 +2,9 @@
 import "../../styles/global.css";
 
 import DesktopNavigation from "./Nav/DesktopNav.astro";
-// import { MobileNavigation } from "./Nav/MobileNav.tsx";
 import Toggle from "./Toggle.astro";
+import MobileNavigation from "./Nav/MobileNav.astro";
+
 import BannerTitle from "./BannerTitle.astro";
 
 const { bannerTitle } = Astro.props;
@@ -18,13 +19,13 @@ const { bannerTitle } = Astro.props;
           aria-hidden="true"></span>
         <a href="/" class="relative text-bg">aidan buie</a>
       </div>
-      <span class="hidden md:flex md:gap-3">
+      <span class="hidden md:flex gap-x-10">
         <DesktopNavigation />
         <Toggle />
       </span>
-      <!-- <div class="flex md:hidden"> -->
-      <!--   <MobileNavigation client:load /> -->
-      <!-- </div> -->
+      <span class="md:hidden">
+        <MobileNavigation />
+      </span>
     </span>
     {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
   </span>

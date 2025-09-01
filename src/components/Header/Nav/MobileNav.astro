@@ -1,0 +1,31 @@
+<div id="hamburger" class="grid place-content-center">
+  <span
+    class="absolute w-8 h-1 rounded-full bg-primary -translate-y-3 transition-all duration-150 data-[active=true]:translate-y-0 data-[active=true]:-rotate-45"
+  >
+  </span>
+  <span
+    class="w-8 h-1 rounded-full bg-primary transition-all duration-150 data-[active=true]:bg-bg data-[active=true]:h-0"
+  >
+  </span>
+  <span
+    class="absolute w-8 h-1 rounded-full bg-primary translate-y-3 transition-all duration-150 data-[active=true]:translate-y-0 data-[active=true]:rotate-45"
+  >
+  </span>
+</div>
+
+<script>
+  const hamburger = document.querySelector("#hamburger") as HTMLElement;
+  hamburger.addEventListener("click", () => {
+    // Toggle dataset.active
+    hamburger.querySelectorAll("span").forEach((c) => {
+      if (c.dataset.active === "false") {
+        c.dataset.active = "true";
+        console.log("toggled true");
+      } else {
+        c.dataset.active = "false";
+        console.log("toggled false");
+      }
+    });
+    // Other stuff
+  });
+</script>
