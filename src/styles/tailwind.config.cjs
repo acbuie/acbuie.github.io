@@ -3,6 +3,14 @@ module.exports = {
   theme: {
     extend: {
       typography: () => ({
+        DEFAULT: {
+          css: {
+            pre: {
+              maxWidth: "calc(100vw - 40px)",
+              overflowX: "scroll",
+            },
+          },
+        },
         main: {
           css: {
             "--tw-prose-body": "var(--color-primary)",

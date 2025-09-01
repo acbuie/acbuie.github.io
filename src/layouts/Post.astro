@@ -6,7 +6,7 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <div class="flex justify-center">
-    <div class="prose prose-main prose-lg mb-50">
+    <div class="prose prose-main md:prose-lg mb-50">
       <h1>{frontmatter.title}</h1>
       <slot />
     </div>
