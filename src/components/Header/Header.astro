@@ -4,10 +4,6 @@ import "../../styles/global.css";
 import DesktopNavigation from "./Nav/DesktopNav.astro";
 import Toggle from "./Toggle.astro";
 import MobileNavigation from "./Nav/MobileNav.astro";
-
-import BannerTitle from "./BannerTitle.astro";
-
-const { bannerTitle } = Astro.props;
 ---
 
 <span class="bg-bg w-full sticky top-0 flex flex-col text-2xl font-bold">
@@ -27,6 +23,5 @@ const { bannerTitle } = Astro.props;
         <MobileNavigation />
       </span>
     </span>
-    {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
   </span>
 </span>

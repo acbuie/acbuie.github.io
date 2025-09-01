@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { CollectionEntry } from "astro:content";
+import BannerTitle from "@/components/Header/BannerTitle.astro";
 
 const rawPosts = await getCollection("blogPosts");
 
@@ -33,6 +34,7 @@ const postsArray = Object.keys(posts)
 ---
 
 <BaseLayout pageTitle="Blog | acbuie" bannerTitle="Musings">
+  <BannerTitle bannerTitle="Musings" />
   <ul>
     {
       postsArray.map((d) => (
