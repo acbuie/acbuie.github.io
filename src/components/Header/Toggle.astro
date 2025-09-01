@@ -1,5 +1,4 @@
-<!-- <button> toggle </button> -->
-<button>
+<button id="toggle">
   <svg width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
     <path
       class="fill-primary dark:fill-transparent"
@@ -15,9 +14,11 @@
 </button>
 
 <script>
-  const button = document.querySelector("button") as HTMLButtonElement;
-  button.addEventListener("click", () => {
-    console.log("clicked");
-    document.documentElement.classList.toggle("dark");
+  const button = document.querySelectorAll("#toggle");
+  button.forEach((b) => {
+    b.addEventListener("click", () => {
+      console.log("clicked");
+      document.documentElement.classList.toggle("dark");
+    });
   });
 </script>
