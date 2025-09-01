@@ -2,26 +2,24 @@
 import "../../styles/global.css";
 
 import DesktopNavigation from "./Nav/DesktopNav.astro";
-import Toggle from "./Toggle.astro";
 import MobileNavigation from "./Nav/MobileNav.astro";
 ---
 
-<span class="bg-bg w-full sticky top-0 flex flex-col text-2xl font-bold">
-  <span class="px-5 md:px-10 xl:px-50">
-    <span class="h-22 flex items-center justify-between">
-      <div class="relative flex justify-center p-1.5">
-        <span
-          class="absolute -inset-1 block -skew-y-3 -skew-x-3 bg-gruv-aqua"
-          aria-hidden="true"></span>
-        <a href="/" class="relative text-bg">aidan buie</a>
-      </div>
-      <span class="hidden md:flex gap-x-10">
-        <DesktopNavigation />
-        <Toggle />
-      </span>
-      <span class="md:hidden">
-        <MobileNavigation />
-      </span>
+<nav
+  class="bg-bg w-full top-0 flex flex-col text-2xl font-bold px-5 md:px-10 xl:px-50"
+>
+  <div class="h-22 flex items-center justify-between">
+    <div class="relative flex justify-center p-1.5">
+      <span
+        class="absolute -inset-1 block -skew-y-3 -skew-x-3 bg-gruv-aqua"
+        aria-hidden="true"></span>
+      <a href="/" class="relative text-bg">aidan buie</a>
+    </div>
+    <span class="hidden md:block">
+      <DesktopNavigation />
     </span>
-  </span>
-</span>
+    <div class="md:hidden">
+      <MobileNavigation />
+    </div>
+  </div>
+</nav>
