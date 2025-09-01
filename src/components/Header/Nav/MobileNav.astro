@@ -1,31 +1,55 @@
-<div id="hamburger" class="grid place-content-center">
+---
+import Toggle from "../Toggle.astro";
+---
+
+<div
+  id="hamburgerMenu"
+  class="hidden bg-bg h-[calc(100vh-88px)] w-screen z-1 fixed bottom-0 left-0 data-[active=true]:block px-5"
+>
+  <ul class="flex flex-col gap-y-6 pt-6">
+    <li><a href="/blog/" class="text-gruv-blue">Musings</a></li>
+    <li><a href="/portfolio/" class="text-gruv-red">Portfolio</a></li>
+    <li><a href="/about/" class="text-gruv-orange">About</a></li>
+  </ul>
+
+  <div class="absolute top-0 right-0 px-5 pt-6">
+    <Toggle />
+  </div>
+</div>
+
+<div id="hamburger" class="grid place-content-between size-8 mt-4">
   <span
-    class="absolute w-8 h-1 rounded-full bg-primary -translate-y-3 transition-all duration-150 data-[active=true]:translate-y-0 data-[active=true]:-rotate-45"
+    class="absolute w-8 h-1 rounded-full bg-primary -translate-y-3 transition-transform duration-150 data-[active=true]:translate-y-0 data-[active=true]:-rotate-45"
   >
   </span>
   <span
-    class="w-8 h-1 rounded-full bg-primary transition-all duration-150 data-[active=true]:bg-bg data-[active=true]:h-0"
+    class="w-8 h-1 rounded-full bg-primary transition-transform duration-150 data-[active=true]:bg-bg data-[active=true]:h-0"
   >
   </span>
   <span
-    class="absolute w-8 h-1 rounded-full bg-primary translate-y-3 transition-all duration-150 data-[active=true]:translate-y-0 data-[active=true]:rotate-45"
+    class="absolute w-8 h-1 rounded-full bg-primary translate-y-3 transition-transform duration-150 data-[active=true]:translate-y-0 data-[active=true]:rotate-45"
   >
   </span>
 </div>
 
 <script>
   const hamburger = document.querySelector("#hamburger") as HTMLElement;
+  const menu = document.querySelector("#hamburgerMenu") as HTMLElement;
+
   hamburger.addEventListener("click", () => {
     // Toggle dataset.active
     hamburger.querySelectorAll("span").forEach((c) => {
       if (c.dataset.active === "false") {
         c.dataset.active = "true";
-        console.log("toggled true");
       } else {
         c.dataset.active = "false";
-        console.log("toggled false");
       }
     });
-    // Other stuff
+    // Show menu
+    if (menu.dataset.active === "false") {
+      menu.dataset.active = "true";
+    } else {
+      menu.dataset.active = "false";
+    }
   });
 </script>
