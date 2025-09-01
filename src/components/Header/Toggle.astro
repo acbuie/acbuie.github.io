@@ -17,8 +17,14 @@
   const button = document.querySelectorAll("#toggle");
   button.forEach((b) => {
     b.addEventListener("click", () => {
-      console.log("clicked");
       document.documentElement.classList.toggle("dark");
+
+      const darkMode = document.documentElement.classList.contains("dark");
+      if (darkMode) {
+        localStorage.theme = "dark";
+      } else {
+        localStorage.theme = "light";
+      }
     });
   });
 </script>
