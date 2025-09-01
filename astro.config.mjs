@@ -1,15 +1,12 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
-// import react from "@astrojs/react";
-
 import tailwindcss from "@tailwindcss/vite";
+import expressiveCode from "astro-expressive-code";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://acbuie.github.io",
 
-  // integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
   },
@@ -18,8 +15,10 @@ export default defineConfig({
     "/posts": "/blog",
   },
 
-  // TODO: Swap to Shiki or Prism eventually
-  markdown: {
-    syntaxHighlight: false,
-  },
+  integrations: [
+    expressiveCode({
+      themes: ["gruvbox-dark-soft", "gruvbox-light-soft"],
+    }),
+  ],
 });
+
