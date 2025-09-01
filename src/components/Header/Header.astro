@@ -5,21 +5,19 @@ import DesktopNavigation from "./Nav/DesktopNav.astro";
 import MobileNavigation from "./Nav/MobileNav.astro";
 ---
 
-<nav
-  class="bg-bg w-full top-0 flex flex-col text-2xl font-bold px-5 md:px-10 xl:px-50"
->
-  <div class="h-22 flex items-center justify-between">
+<header class="top-0 flex flex-col text-2xl font-bold px-5 md:px-10 xl:px-50">
+  <nav class="h-22 flex items-center justify-between">
     <div class="relative flex justify-center p-1.5">
       <span
         class="absolute -inset-1 block -skew-y-3 -skew-x-3 bg-gruv-aqua"
         aria-hidden="true"></span>
       <a href="/" class="relative text-bg">aidan buie</a>
     </div>
-    <span class="hidden md:block">
+    <div class="hidden md:block">
       <DesktopNavigation />
-    </span>
+    </div>
     <div class="md:hidden">
       <MobileNavigation />
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
