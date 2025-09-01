@@ -5,9 +5,9 @@ module.exports = {
       typography: () => ({
         DEFAULT: {
           css: {
-            pre: {
+            // Hack for small screen; 40px is equivalent to px-5
+            ".expressive-code": {
               maxWidth: "calc(100vw - 40px)",
-              overflowX: "scroll",
             },
           },
         },
