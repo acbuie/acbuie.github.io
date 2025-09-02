@@ -1,54 +1,19 @@
 ---
-import Toggle from "../Toggle.astro";
+// import Toggle from "../Toggle.astro";
 ---
 
-<div
-  data-active="false"
-  id="hamburgerMenu"
-  class="hidden bg-bg h-[calc(100vh-88px)] w-screen fixed bottom-0 left-0 data-[active=true]:block px-5"
->
-  <ul class="flex flex-col gap-y-6 pt-6">
-    <li><a href="/blog/" class="text-gruv-blue">Musings</a></li>
-    <li><a href="/portfolio/" class="text-gruv-red">Portfolio</a></li>
-    <li><a href="/about/" class="text-gruv-orange">About</a></li>
-  </ul>
-
-  <div class="absolute top-0 right-0 px-5 pt-6">
-    <Toggle />
-  </div>
-</div>
-
-<div id="hamburger" class="grid place-content-between size-8 mt-4">
-  <span
-    data-active="false"
-    class="absolute w-8 h-1 rounded-full bg-primary -translate-y-3 transition-transform duration-150 data-[active=true]:translate-y-0 data-[active=true]:-rotate-45"
-  >
-  </span>
-  <span
-    data-active="false"
-    class="w-8 h-1 rounded-full bg-primary transition-transform duration-150 data-[active=true]:bg-bg data-[active=true]:h-0"
-  >
-  </span>
-  <span
-    data-active="false"
-    class="absolute w-8 h-1 rounded-full bg-primary translate-y-3 transition-transform duration-150 data-[active=true]:translate-y-0 data-[active=true]:rotate-45"
-  >
-  </span>
-</div>
-
+<!--
 <script>
-  const hamburger = document.querySelector("#hamburger") as HTMLElement;
+  const hamburger = document.querySelector("#hamburger") as HTMLButtonElement;
   const menu = document.querySelector("#hamburgerMenu") as HTMLElement;
 
   hamburger.addEventListener("click", () => {
     // Toggle dataset.active
-    hamburger.querySelectorAll("span").forEach((c) => {
-      if (c.dataset.active === "false") {
-        c.dataset.active = "true";
-      } else {
-        c.dataset.active = "false";
-      }
-    });
+    if (hamburger.dataset.active === "false") {
+      hamburger.dataset.active = "true";
+    } else {
+      hamburger.dataset.active = "false";
+    }
     // Show menu
     if (menu.dataset.active === "false") {
       menu.dataset.active = "true";
@@ -57,3 +22,4 @@ import Toggle from "../Toggle.astro";
     }
   });
 </script>
+-->
