@@ -2,6 +2,10 @@
 import "../styles/global.css";
 import Header from "@/components/Header/Header.astro";
 
+interface Props {
+  pageTitle: string;
+}
+
 const { pageTitle } = Astro.props;
 ---
 
