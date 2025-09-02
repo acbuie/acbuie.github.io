@@ -1,14 +1,14 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import Page from "./Page.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<Page pageTitle={frontmatter.title}>
   <div class="flex justify-center">
-    <div class="prose prose-main md:prose-lg mb-50">
+    <div class="prose prose-main md:prose-lg">
       <h1>{frontmatter.title}</h1>
       <slot />
     </div>
   </div>
-</BaseLayout>
+</Page>

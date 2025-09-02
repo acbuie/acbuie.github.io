@@ -1,0 +1,18 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import BannerTitle from "@/components/Header/BannerTitle.astro";
+
+interface Props {
+  pageTitle: string;
+  bannerTitle?: string;
+}
+
+const { pageTitle, bannerTitle } = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
+  <div class="mb-[50vh]">
+    <slot />
+  </div>
+</BaseLayout>

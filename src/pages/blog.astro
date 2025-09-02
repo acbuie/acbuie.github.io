@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import Page from "@/layouts/Page.astro";
 import type { CollectionEntry } from "astro:content";
-import BannerTitle from "@/components/Header/BannerTitle.astro";
 
 const rawPosts = await getCollection("blogPosts");
 
@@ -33,8 +32,7 @@ const postsArray = Object.keys(posts)
   .sort((a, b) => parseInt(b.year) - parseInt(a.year));
 ---
 
-<BaseLayout pageTitle="Blog | acbuie" bannerTitle="Musings">
-  <BannerTitle bannerTitle="Musings" />
+<Page pageTitle="Blog | acbuie" bannerTitle="Musings">
   <ul>
     {
       postsArray.map((d) => (
@@ -59,4 +57,4 @@ const postsArray = Object.keys(posts)
       ))
     }
   </ul>
-</BaseLayout>
+</Page>
