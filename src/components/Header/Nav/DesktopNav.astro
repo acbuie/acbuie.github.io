@@ -1,10 +1,39 @@
 ---
 import Toggle from "../Toggle.astro";
+
+const { pathname } = Astro.url;
+const basePath = pathname.split("/").filter((c) => c)[0];
 ---
 
 <ul class="flex gap-x-4 md:gap-x-10">
-  <li class="text-gruv-blue"><a href="/blog/">Musings</a></li>
-  <li class="text-gruv-red"><a href="/portfolio/">Portfolio</a></li>
-  <li class="text-gruv-orange"><a href="/about/">About</a></li>
+  <li>
+    <a
+      class="text-gruv-blue aria-[current=page]:underline"
+      aria-current={basePath === "blog" || basePath === "posts"
+        ? "page"
+        : "false"}
+      href="/blog/"
+    >
+      Musings
+    </a>
+  </li>
+  <li>
+    <a
+      class="text-gruv-red aria-[current=page]:underline"
+      aria-current={basePath === "portfolio" ? "page" : "false"}
+      href="/portfolio/"
+    >
+      Portfolio
+    </a>
+  </li>
+  <li>
+    <a
+      class="text-gruv-orange aria-[current=page]:underline"
+      aria-current={basePath === "about" ? "page" : "false"}
+      href="/about/"
+    >
+      About
+    </a>
+  </li>
   <li class="flex justify-items-center"><Toggle /></li>
 </ul>
