@@ -6,9 +6,9 @@ const { frontmatter } = Astro.props;
 
 <Page pageTitle={frontmatter.title}>
   <div class="flex justify-center">
-    <div class="prose prose-main md:prose-lg">
-      <h1>{frontmatter.title}</h1>
+    <article class="prose prose-main md:prose-lg">
+      <h1 class="text-balance">{frontmatter.title}</h1>
       <slot />
-    </div>
+    </article>
   </div>
 </Page>
