@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+import BaseHead from "@/layouts/BaseHead.astro";
 import Header from "@/components/Header/Header.astro";
 
 interface Props {
@@ -12,20 +12,7 @@ const { pageTitle } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <script is:inline>
-      // Ensures dark mode is applied before styles load
-      document.documentElement.classList.toggle(
-        "dark",
-        localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches),
-      );
-    </script>
-    <title>{pageTitle}</title>
+    <BaseHead pageTitle={pageTitle} />
   </head>
   <body
     class="text-primary bg-bg subpixel-antialiased selection:bg-gruv-aqua selection:text-primary w-screen overflow-x-hidden"
