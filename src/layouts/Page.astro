@@ -11,8 +11,8 @@ const { pageTitle, bannerTitle } = Astro.props;
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
-  <div class="mb-[50vh]">
+  <div class="flex-none">
+    {bannerTitle && <BannerTitle bannerTitle={bannerTitle} />}
     <slot />
   </div>
 </BaseLayout>
