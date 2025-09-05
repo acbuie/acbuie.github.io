@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.10",
+    "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.13.5",
     "astro-expressive-code": "^0.41.3",
     "class-variance-authority": "^0.7.1",
@@ -19,7 +20,6 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.16",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.11"
