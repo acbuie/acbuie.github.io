@@ -1,5 +1,5 @@
 ---
-import Toggle from "../Toggle.astro";
+import ThemeToggle from "@/components/Theme/ThemeToggle.astro";
 
 const { pathname } = Astro.url;
 const basePath = pathname.split("/").filter((c) => c)[0];
@@ -35,5 +35,7 @@ const basePath = pathname.split("/").filter((c) => c)[0];
       About
     </a>
   </li>
-  <li class="flex justify-items-center"><Toggle /></li>
+  <li class="flex items-center justify-center">
+    <ThemeToggle />
+  </li>
 </ul>

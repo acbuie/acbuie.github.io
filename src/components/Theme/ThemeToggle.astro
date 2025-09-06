@@ -21,10 +21,10 @@
 
       const darkMode = document.documentElement.classList.contains("dark");
       if (darkMode) {
-        localStorage.theme = "dark";
+        localStorage.setItem("theme", "dark");
         document.documentElement.dataset.theme = "gruvbox-dark-soft";
       } else {
-        localStorage.theme = "light";
+        localStorage.setItem("theme", "light");
         document.documentElement.dataset.theme = "gruvbox-light-soft";
       }
     });
