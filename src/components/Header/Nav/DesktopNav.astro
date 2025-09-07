@@ -1,37 +1,36 @@
 ---
 import ThemeToggle from "@/components/Theme/ThemeToggle.astro";
+
+const basePath = Astro.url.pathname.split("/").filter((c) => c)[0];
 ---
-
-<script is:inline>
-  document.addEventListener("astro:page-load", () => {
-    const basePath = new URL(window.location).pathname
-      .split("/")
-      .filter((c) => c)[0];
-
-    const links = document
-      .getElementById("nav-links")
-      .getElementsByTagName("a");
-
-    links[0].ariaCurrent =
-      basePath === "blog" || basePath == "posts" ? "page" : "false";
-    links[1].ariaCurrent = basePath === "portfolio" ? "page" : "false";
-    links[2].ariaCurrent = basePath === "about" ? "page" : "false";
-  });
-</script>
 
 <ul id="nav-links" class="flex gap-x-4 md:gap-x-10">
   <li>
-    <a class="text-gruv-blue aria-[current=page]:underline" href="/blog/">
+    <a
+      class="text-gruv-blue aria-[current=page]:underline"
+      href="/blog/"
+      aria-current={basePath === "blog" || basePath === "posts"
+        ? "page"
+        : "false"}
+    >
       Musings
     </a>
   </li>
   <li>
-    <a class="text-gruv-red aria-[current=page]:underline" href="/portfolio/">
+    <a
+      class="text-gruv-red aria-[current=page]:underline"
+      href="/portfolio/"
+      aria-current={basePath === "portfolio" ? "page" : "false"}
+    >
       Portfolio
     </a>
   </li>
   <li>
-    <a class="text-gruv-orange aria-[current=page]:underline" href="/about/">
+    <a
+      class="text-gruv-orange aria-[current=page]:underline"
+      href="/about/"
+      aria-current={basePath === "about" ? "page" : "false"}
+    >
       About
     </a>
   </li>

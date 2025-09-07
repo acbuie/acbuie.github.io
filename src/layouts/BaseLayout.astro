@@ -18,9 +18,8 @@ const { pageTitle } = Astro.props;
   <body
     class="text-primary bg-bg subpixel-antialiased selection:bg-gruv-aqua selection:text-primary w-screen min-h-screen overflow-x-hidden flex flex-col"
   >
-    <Header transition:persist="header" />
+    <Header />
     <main
-      transition:animate="fade"
       class="px-5 md:px-10 lg:px-25 xl:px-50 mb-40 grow has-[div#hero]:flex has-[div#hero]:justify-center"
     >
       <slot />
