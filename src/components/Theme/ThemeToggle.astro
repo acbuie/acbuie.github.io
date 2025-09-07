@@ -13,20 +13,17 @@
   </svg>
 </button>
 
-<script>
-  const button = document.querySelectorAll("#toggle");
-  button.forEach((b) => {
-    b.addEventListener("click", () => {
-      document.documentElement.classList.toggle("dark");
+<script is:inline>
+  const button = document.querySelector("#toggle");
 
-      const darkMode = document.documentElement.classList.contains("dark");
-      if (darkMode) {
-        localStorage.setItem("theme", "dark");
-        document.documentElement.dataset.theme = "gruvbox-dark-soft";
-      } else {
-        localStorage.setItem("theme", "light");
-        document.documentElement.dataset.theme = "gruvbox-light-soft";
-      }
-    });
+  button.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    if (document.documentElement.classList.contains("dark")) {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.dataset.theme = "gruvbox-dark-soft";
+    } else {
+      localStorage.setItem("theme", "light");
+      document.documentElement.dataset.theme = "gruvbox-light-soft";
+    }
   });
 </script>
