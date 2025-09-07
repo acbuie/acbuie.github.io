@@ -13,8 +13,8 @@
   </svg>
 </button>
 
-<script is:inline>
-  const button = document.querySelector("#toggle");
+<script>
+  const button = document.querySelector("#toggle") as HTMLButtonElement;
 
   button.addEventListener("click", () => {
     document.documentElement.classList.toggle("dark");
@@ -25,5 +25,15 @@
       localStorage.setItem("theme", "light");
       document.documentElement.dataset.theme = "gruvbox-light-soft";
     }
+  });
+</script>
+
+<script is:inline>
+  document.addEventListener("astro:after-swap", () => {
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
   });
 </script>
