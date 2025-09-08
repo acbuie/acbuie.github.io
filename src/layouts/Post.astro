@@ -1,14 +1,57 @@
 ---
-import BaseLayout from "./BaseLayout.astro";
+import Page from "./Page.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    updateDate?: Date;
+    tags: string[];
+  };
+}
 
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<Page pageTitle={frontmatter.title}>
   <div class="flex justify-center">
-    <div class="prose sm:prose-lg prose-main mb-50">
-      <h1>{frontmatter.title}</h1>
+    <article class="prose prose-main md:prose-lg">
+      <h1 class="text-balance">{frontmatter.title}</h1>
+      <div class="not-prose text-lg md:text-xl">
+        <span class="mb-1 flex flex-row justify-between">
+          <p>
+            {
+              frontmatter.pubDate.toLocaleDateString("default", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })
+            }
+          </p>
+          <p>
+            {
+              frontmatter.updateDate &&
+                `Updated ${frontmatter.pubDate.toLocaleDateString("default", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}`
+            }
+          </p>
+        </span>
+        <ul class="flex flex-row gap-x-2.5">
+          {
+            frontmatter.tags.map((t) => (
+              <li class="text-gruv-yellow">
+                <a>#{t}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <p class="lead">{frontmatter.description}</p>
       <slot />
-    </div>
+    </article>
   </div>
-</BaseLayout>
+</Page>

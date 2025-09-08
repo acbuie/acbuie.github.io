@@ -3,34 +3,33 @@ module.exports = {
   theme: {
     extend: {
       typography: () => ({
+        DEFAULT: {
+          css: {
+            // Hack for small screen; 40px is equivalent to px-5
+            ".expressive-code": {
+              maxWidth: "calc(100vw - 40px)",
+            },
+          },
+        },
         main: {
           css: {
-            "--tw-prose-body": "var(--foreground)",
-            "--tw-prose-headings": "var(--foreground)",
-            "--tw-prose-lead": "var(--cyan)",
-
-            "--tw-prose-links": "var(--blue)",
-            "--tw-prose-bold": "var(--foreground)",
-
-            "--tw-prose-counters": "var(--purple)",
-            "--tw-prose-bullets": "var(--secondary)",
-
-            "--tw-prose-hr": "var(--primary)",
-
-            "--tw-prose-quotes": "var(--muted-foreground)",
-            "--tw-prose-quote-borders": "var(--muted)",
-            "--tw-prose-captions": "var(--foreground)",
-
-            // "--tw-prose-kbd": colors.gray[900],
-            // "--tw-prose-kbd-shadows": hexToRgb(colors.gray[900]),
-
-            //TODO: Switch to Shiki or Prism eventually
-            "--tw-prose-code": "var(--red)",
-            "--tw-prose-pre-code": "var(--light0)",
-            "--tw-prose-pre-bg": "var(--dark1)",
-
-            "--tw-prose-th-borders": "var(--secondary)",
-            "--tw-prose-td-borders": "var(--accent)",
+            "--tw-prose-body": "var(--color-primary)",
+            "--tw-prose-headings": "var(--color-primary)",
+            "--tw-prose-lead": "var(--color-secondary)",
+            "--tw-prose-links": "var(--color-primary)",
+            "--tw-prose-bold": "var(--color-primary)",
+            "--tw-prose-counters": "var(--color-gruv-purple)",
+            "--tw-prose-bullets": "var(--color-gruv-purple)",
+            "--tw-prose-hr": "var(--color-bg-accent)",
+            "--tw-prose-quotes": "var(--color-secondary)",
+            "--tw-prose-quote-borders": "var(--color-gruv-purple)",
+            "--tw-prose-captions": "var(--color-accent)",
+            "--tw-prose-kbd": "var(--color-gruv-red)",
+            "--tw-prose-code": "var(--color-gruv-red)", // In text
+            "--tw-prose-pre-code": "var(--color-accent)", // In block
+            "--tw-prose-pre-bg": "var(--color-bg-accent)", // Block bg
+            "--tw-prose-th-borders": "var(--color-red)",
+            "--tw-prose-td-borders": "var(--color-blue)",
           },
         },
       }),
