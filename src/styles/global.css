@@ -6,6 +6,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@font-face {
+  font-family: Alice;
+  font-weight: 400;
+  font-style: normal;
+  src: url("/fonts/Alice.woff2") format("woff2");
+}
+
 @theme {
   --color-primary: #282828;
   --color-secondary: #7c6f64;
@@ -35,7 +42,7 @@
 }
 
 @layer base {
-  body {
+  html {
     font-family: Alice;
   }
   a {
